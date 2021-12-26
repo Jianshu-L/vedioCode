@@ -1,3 +1,3 @@
-# pacman
+# Scripts
 
-Creating pacman game vedio from csv data and raw mat data# vedioCode
+Put your standalone scripts (Python and bash) as well as jupyter notebooks here.
