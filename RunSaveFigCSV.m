@@ -3,6 +3,7 @@ addpath(genpath("src"))
 init_var; % clear and init variables
 init_create; % create vedio folder and diary
 %% load csv data
+Path = "D:\data\Detron-03-Aug-2022-2";
 dataName = "omegaL-19-Dec-2020-4.csv"; % draw vedio from dataName in data folder
 T = loadcsv(strcat('data/',dataName));
 T_ = T(1:100590,:);

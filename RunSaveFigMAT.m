@@ -3,9 +3,10 @@ addpath(genpath("src"))
 init_var; % clear and init variables
 init_create; % create vedio folder and diary
 %% load mat data
-dataName = "Patamon-01-Jul-2021-1"; % draw vedio from dataName in data folder
-files = orderFile(dirFiles(strcat('data/',dataName),"mat"),1,2);
-filePath = strcat('data/',dataName);
+dataName = "data"; % draw vedio from dataName in data folder
+Path = ".";
+files = orderFile(dirFiles(strcat(Path,"\",dataName),"mat"),1,2);
+filePath = strcat(Path,"\",dataName);
 %% open window and init gameMap, ghosts, pacMan
 init_csv;
 vedioWidth = 800;
