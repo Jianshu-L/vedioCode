@@ -1,6 +1,8 @@
 function createMP4(name, vedioName, vedioWidth, vedioHeight)
 %% create mp4 file
 if ~exist(vedioName,'file')
+    fprintf('ffmpeg -r 30 -f image2 -i %s/%%5d.jpg -vf pad=%d:%d:100:0:black %s\n', ...
+        name, vedioWidth, vedioHeight, vedioName)
     [status,~] = unix(sprintf('ffmpeg -r 30 -f image2 -i %s/%%5d.jpg -vf pad=%d:%d:100:0:black %s\n', ...
         name, vedioWidth, vedioHeight, vedioName));
     if status
