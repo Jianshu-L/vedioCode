@@ -1,5 +1,5 @@
-function [dots,sizes,colors,n]=dotsProfiling(numRows,numCols,Map,tileSize, ...
-    mx, my,pelletSize,energizerSize,scale)
+function [dots,sizes,colors,n]=dotsProfiling(~,~,Map,tileSize, ...
+    mx, my,pelletSize,~,scale)
 
 dotsIndex = find(Map == '.');
 if isempty(dotsIndex)
@@ -29,17 +29,15 @@ enersColor = repmat([1.0,184.0/255,174.0/255],length(enersIndex),1)';
 colors = [dotsColor,enersColor];
 end
 
-function Pos = ItoP(Index)
-Size = size(Index);
-if Size(1) > 1 && Size(2) == 1
-    Index = Index';
-end
-pos_x= rem(Index,28);
-if pos_x ==0
-    pos_x =28;
-    pos_y = fix(Index/28);
+function Pos = ItoP(i)
+if ~isempty(i)
+    pos_x= rem(i,29);
+    Index = pos_x == 0;
+    pos_y = fix(i/29)+1;
+    pos_x(Index) = 29;
+    pos_y(Index) = pos_y(Index)-1;
 else
-    pos_y = fix(Index/28)+1;
+    error("index should not be empty")
 end
 Pos = [pos_x;pos_y];
 end
