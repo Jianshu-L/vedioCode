@@ -31,10 +31,10 @@ end
 
 function Pos = ItoP(i)
 if ~isempty(i)
-    pos_x= rem(i,29);
+    pos_x= rem(i,28);
     Index = pos_x == 0;
-    pos_y = fix(i/29)+1;
-    pos_x(Index) = 29;
+    pos_y = fix(i/28)+1;
+    pos_x(Index) = 28;
     pos_y(Index) = pos_y(Index)-1;
 else
     error("index should not be empty")

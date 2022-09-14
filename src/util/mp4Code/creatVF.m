@@ -1,7 +1,7 @@
 function fname = creatVF(file_name, datapath)
 %% vedio folder name
 round_now = split(file_name, {'-','.'});
-fname1 = sprintf('%s%s', datapath, join(round_now(3:7)','-'));
+fname1 = sprintf('%s%s', datapath, join(round_now(1:6)','-'));
 % fname2 = strcat(join(round_now(1:7)','-'));
 % fname = sprintf('%s/%s', fname1, fname2);
 fname = sprintf('%s', fname1);
