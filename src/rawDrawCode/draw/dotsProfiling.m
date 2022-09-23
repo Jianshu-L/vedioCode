@@ -2,6 +2,10 @@ function [dots,sizes,colors,n]=dotsProfiling(~,~,Map,tileSize, ...
     mx, my,pelletSize,~,scale)
 
 dotsIndex = find(Map == '.');
+Size = size(dotsIndex);
+if Size(1) ~= 1
+    dotsIndex = dotsIndex';
+end
 if isempty(dotsIndex)
     dotsPosX = [];
     dotsPosY = [];
